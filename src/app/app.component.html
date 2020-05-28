@@ -1,5 +1,5 @@
 <!--Navbar-->
-<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark tranparent fixed-top scrolling-navbar" [containerInside]="false">
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark tranparent fixed-top scrolling-navbar z-depth-0" [containerInside]="false">
 
     <!-- Navbar brand -->
     <mdb-navbar-brand>
@@ -14,31 +14,22 @@
         <!-- Links -->
         <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-                <a class="nav-link waves-light" mdbWavesEffect style="color:black">
-                    <mdb-icon fas icon="map"></mdb-icon>Travel<span class="sr-only">(current)</span></a>
+                <a class="nav-link waves-light" mdbWavesEffect style="color:black" [routerLink]="['/']" preserveQueryParams preserveFragment>
+                    <mdb-icon fas icon="home"></mdb-icon>Home<span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link waves-light" mdbWavesEffect style="color:black">
-                    <mdb-icon fas icon="shopping-cart"></mdb-icon>Eating<span class="sr-only">(current)</span></a>
+            <li class="nav-item">
+                <a class="nav-link waves-light" mdbWavesEffect style="color:black" [routerLink]="['/about']" preserveQueryParams preserveFragment>
+                    <mdb-icon fas icon="info"></mdb-icon>About<span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link waves-light" mdbWavesEffect style="color:black">
-                    <mdb-icon fas icon="utensils"></mdb-icon>Cooking<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link waves-light" mdbWavesEffect style="color:black">
-                    <mdb-icon fas icon="camera"></mdb-icon>Selfies<span class="sr-only">(current)</span></a>
-            </li>
-            <!-- <li class="nav-item dropdown" dropdown>
+            <li class="nav-item dropdown" dropdown>
                 <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" style="color:black" mdbWavesEffect>
-                    <mdb-icon fas icon="info"></mdb-icon>Hobbies<span class="caret"></span></a>
+                    <mdb-icon fas icon="globe-americas"></mdb-icon>Into My World<span class="caret"></span></a>
                 <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
-                    <a class="dropdown-item waves-light" mdbWavesEffect href="#">Travel</a>
-                    <a class="dropdown-item waves-light" mdbWavesEffect href="#">Eating</a>
-                    <a class="dropdown-item waves-light" mdbWavesEffect href="#">Cooking</a>
-                    <a class="dropdown-item waves-light" mdbWavesEffect href="#">Selfie</a>
+                    <a class="dropdown-item waves-light fas fa-map" mdbWavesEffect [routerLink]="['/travel']" preserveQueryParams preserveFragment>Travel</a>
+                    <a class="dropdown-item waves-light fas fa-utensils" mdbWavesEffect [routerLink]="['/cooking']" preserveQueryParams preserveFragment>Cooking</a>
+                    <a class="dropdown-item waves-light fas fa-camera" mdbWavesEffect [routerLink]="['/selfies']" preserveQueryParams preserveFragment>Selfie</a>
                 </div>
-            </li> -->
+            </li>
             <li class="nav-item active">
                 <a class="nav-link waves-light" mdbWavesEffect style="color:black">
                     <mdb-icon fas icon="envelope"></mdb-icon> Contact<span class="sr-only">(current)</span></a>
