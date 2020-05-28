@@ -1,29 +1,50 @@
 <!--Navbar-->
-<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark cyan" [containerInside]="false">
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark tranparent fixed-top scrolling-navbar" [containerInside]="false">
 
-  <!-- Navbar brand -->
-  <mdb-navbar-brand><a class="navbar-brand" href="#">MyBlog</a></mdb-navbar-brand>
+    <!-- Navbar brand -->
+    <mdb-navbar-brand>
+        <a class="navbar-brand" href="#" style="color:black">
+            <img src="../assets//myName.png" style="width:70px;height: 70px">
+        </a>
+    </mdb-navbar-brand>
 
-  <!-- Collapsible content -->
-  <links>
+    <!-- Collapsible content -->
+    <links>
 
-    <!-- Links -->
-    <ul class="navbar-nav ml-auto">
-        <li class="nav-item dropdown" dropdown>
-            <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
-              <mdb-icon fas icon="info"></mdb-icon>Hobbies<span class="caret"></span></a>
-            <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
-              <a class="dropdown-item waves-light" mdbWavesEffect href="#">Travel</a>
-              <a class="dropdown-item waves-light" mdbWavesEffect href="#">Eating</a>
-              <a class="dropdown-item waves-light" mdbWavesEffect href="#">Cooking</a>
-              <a class="dropdown-item waves-light" mdbWavesEffect href="#">Selfie</a>
-            </div>
-        </li>   
-      <li class="nav-item active">
-        <a class="nav-link waves-light" mdbWavesEffect><mdb-icon fas icon="envelope"></mdb-icon> Contact<span class="sr-only">(current)</span></a>
-      </li>
-      <!-- Dropdown -->
-      <!-- <li class="nav-item dropdown" dropdown>
+        <!-- Links -->
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link waves-light" mdbWavesEffect style="color:black">
+                    <mdb-icon fas icon="map"></mdb-icon>Travel<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link waves-light" mdbWavesEffect style="color:black">
+                    <mdb-icon fas icon="shopping-cart"></mdb-icon>Eating<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link waves-light" mdbWavesEffect style="color:black">
+                    <mdb-icon fas icon="utensils"></mdb-icon>Cooking<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link waves-light" mdbWavesEffect style="color:black">
+                    <mdb-icon fas icon="camera"></mdb-icon>Selfies<span class="sr-only">(current)</span></a>
+            </li>
+            <!-- <li class="nav-item dropdown" dropdown>
+                <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" style="color:black" mdbWavesEffect>
+                    <mdb-icon fas icon="info"></mdb-icon>Hobbies<span class="caret"></span></a>
+                <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
+                    <a class="dropdown-item waves-light" mdbWavesEffect href="#">Travel</a>
+                    <a class="dropdown-item waves-light" mdbWavesEffect href="#">Eating</a>
+                    <a class="dropdown-item waves-light" mdbWavesEffect href="#">Cooking</a>
+                    <a class="dropdown-item waves-light" mdbWavesEffect href="#">Selfie</a>
+                </div>
+            </li> -->
+            <li class="nav-item active">
+                <a class="nav-link waves-light" mdbWavesEffect style="color:black">
+                    <mdb-icon fas icon="envelope"></mdb-icon> Contact<span class="sr-only">(current)</span></a>
+            </li>
+            <!-- Dropdown -->
+            <!-- <li class="nav-item dropdown" dropdown>
         <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
           <mdb-icon fas icon="user"></mdb-icon> Profile<span class="caret"></span></a>
         <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
@@ -32,10 +53,10 @@
         </div>
       </li> -->
 
-    </ul>
-    <!-- Links -->
-  </links>
-  <!-- Collapsible content -->
+        </ul>
+        <!-- Links -->
+    </links>
+    <!-- Collapsible content -->
 
 </mdb-navbar>
 <!--/.Navbar-->
@@ -43,3 +64,38 @@
 
 <router-outlet></router-outlet>
 
+
+<footer class="page-footer font-small cyan darken-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 py-5">
+                <div class="mb-5 flex-center">
+                    <a class="fb-ic">
+                        <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                    </a>
+                    <a class="tw-ic">
+                        <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                    </a>
+                    <a class="gplus-ic">
+                        <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                    </a>
+                    <a class="li-ic">
+                        <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                    </a>
+                    <a class="ins-ic">
+                        <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                    </a>
+                    <a class="pin-ic">
+                        <i class="fab fa-pinterest fa-lg white-text fa-2x"> </i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+        <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+    </div>
+
+</footer>
