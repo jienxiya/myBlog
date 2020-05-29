@@ -23,11 +23,22 @@
             </li>
             <li class="nav-item dropdown" dropdown>
                 <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" style="color:black" mdbWavesEffect>
+                    <mdb-icon fab icon="blogger-b"></mdb-icon>Blog<span class="caret"></span></a>
+                <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
+                    <a class="dropdown-item waves-light" mdbWavesEffect [routerLink]="['/journey']" preserveQueryParams preserveFragment>Life Journey</a>
+                    <a class="dropdown-item waves-light" mdbWavesEffect [routerLink]="['/positivity']" preserveQueryParams preserveFragment>Positivity</a>
+                    <a class="dropdown-item waves-light" mdbWavesEffect [routerLink]="['/stories']" preserveQueryParams preserveFragment>Untold Story</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown" dropdown>
+                <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" style="color:black" mdbWavesEffect>
                     <mdb-icon fas icon="globe-americas"></mdb-icon>Into My World<span class="caret"></span></a>
                 <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
-                    <a class="dropdown-item waves-light fas fa-map" mdbWavesEffect [routerLink]="['/travel']" preserveQueryParams preserveFragment>Travel</a>
-                    <a class="dropdown-item waves-light fas fa-utensils" mdbWavesEffect [routerLink]="['/cooking']" preserveQueryParams preserveFragment>Cooking</a>
-                    <a class="dropdown-item waves-light fas fa-camera" mdbWavesEffect [routerLink]="['/selfies']" preserveQueryParams preserveFragment>Selfie</a>
+                    <a class="dropdown-item waves-light" mdbWavesEffect [routerLink]="['/travel']" preserveQueryParams preserveFragment>Travel</a>
+                    <a class="dropdown-item waves-light" mdbWavesEffect [routerLink]="['/musics']" preserveQueryParams preserveFragment>Music</a>
+                    <a class="dropdown-item waves-light" mdbWavesEffect [routerLink]="['/arts']" preserveQueryParams preserveFragment>Art</a>
+                    <a class="dropdown-item waves-light" mdbWavesEffect [routerLink]="['/works']" preserveQueryParams preserveFragment>Work</a>
+                    <a class="dropdown-item waves-light" mdbWavesEffect [routerLink]="['/volunteerism']" preserveQueryParams preserveFragment>Volunteerism</a>
                 </div>
             </li>
             <li class="nav-item active">

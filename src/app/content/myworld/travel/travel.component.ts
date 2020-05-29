@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./travel.component.scss']
 })
 export class TravelComponent implements OnInit {
+  show = true
 
   constructor() { }
 
   ngOnInit(): void {
+    this.show = true
   }
 
 }
