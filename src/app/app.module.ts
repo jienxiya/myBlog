@@ -15,6 +15,7 @@ import { MusicComponent } from './content/myworld/music/music.component';
 import { ArtComponent } from './content/myworld/art/art.component';
 import { WorkComponent } from './content/myworld/work/work.component';
 import { VolunteerismComponent } from './content/myworld/volunteerism/volunteerism.component';
+import { PostFormComponent } from './post-form/post-form.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { VolunteerismComponent } from './content/myworld/volunteerism/volunteeri
     MusicComponent,
     ArtComponent,
     WorkComponent,
-    VolunteerismComponent
+    VolunteerismComponent,
+    PostFormComponent
   ],
   imports: [
     BrowserModule,

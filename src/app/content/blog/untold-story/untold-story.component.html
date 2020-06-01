@@ -7,10 +7,31 @@
                         <div class="intro-info-content text-center">
                             <h2 class="h1 display-1 white-text mb-2 wow fadeInDown" data-wow-delay="0.3s">My Untold <br> Story
                             </h2>
-                            <a mdbBtn color="pink" class="wow fadeIn waves-light" mdbWavesEffect data-wow-delay="0.4s">Add Post</a>
+                            <a mdbBtn color="pink" class="wow fadeIn waves-light" mdbWavesEffect data-wow-delay="0.4s" (click)="basicModal.show()">Add Post</a>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
+              <span aria-hidden="true">×</span>
+            </button>
+                <h4 class="modal-title w-100" id="myModalLabel">Add Post</h4>
+            </div>
+            <div class="modal-body">
+                <app-post-form></app-post-form>
+            </div>
+            <div class="text-center form-sm mt-2">
+                <button class="btn btn-info">Post <i class="fas fa-sign-in ml-1"></i></button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" mdbBtn class="waves-light btn btn-outline-danger" aria-label="Close" (click)="basicModal.hide()" mdbWavesEffect>Close</button>
             </div>
         </div>
     </div>
