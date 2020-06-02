@@ -26,6 +26,13 @@ import { VolunteerDetailsComponent } from './content/myworld/volunteer-details/v
 import { WorkDetailsComponent } from './content/myworld/work-details/work-details.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule, AngularFireStorage } from '@angular/fire/storage';
+import { environment } from '../environments/environment';
+import { AngularFirestore } from '@angular/fire/firestore';
+
 
 @NgModule({
   declarations: [
@@ -55,10 +62,14 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
+    AngularFireAuthModule, // imports firebase/auth, only needed for auth features
+    AngularFireStorageModule
 
   ],
-  providers: [],
+  providers: [AngularFirestore, AngularFireStorage],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

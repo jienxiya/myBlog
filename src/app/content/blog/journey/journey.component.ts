@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PostsJourney, journey } from "../../../Service/service";
+import { PostService } from "../../../Service/post.service";
 
 @Component({
   selector: 'app-journey',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JourneyComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service:PostService) { }
 
   ngOnInit(): void {
   }
 
+  upload(journey:journey){
+      this.service.addJourney(journey)
+      console.log(journey);
+      
+  }
 }

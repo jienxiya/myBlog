@@ -28,7 +28,7 @@
                 <h4 class="modal-title w-100" id="myModalLabel">Add Post</h4>
             </div>
             <div class="modal-body">
-                <app-post-form></app-post-form>
+                <app-post-form (post)="upload($event)"></app-post-form>
             </div>
             <div class="text-center form-sm mt-2">
                 <button class="btn btn-info">Post <i class="fas fa-sign-in ml-1"></i></button>

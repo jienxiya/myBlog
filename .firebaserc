@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "uploader-81080": {
+      "hosting": {
+        "myBlog": [
+          "uploader-81080"
+        ]
+      }
+    }
+  }
+}
