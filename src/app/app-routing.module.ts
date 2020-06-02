@@ -8,7 +8,7 @@ import { ArtComponent } from "./content/myworld/art/art.component"
 import { MusicComponent } from "./content/myworld/music/music.component"
 import { VolunteerismComponent } from "./content/myworld/volunteerism/volunteerism.component"
 import { WorkComponent } from "./content/myworld/work/work.component"
-import { JourneyComponent } from "./content/blog/journey/journey.component"
+import { JourneyDetailsComponent } from "./content/blog/journey-details/journey-details.component"
 import { PositivityComponent } from "./content/blog/positivity/positivity.component"
 import { UntoldStoryComponent } from "./content/blog/untold-story/untold-story.component"
 
@@ -25,7 +25,7 @@ const routes: Routes = [
   {path:'musics', component:MusicComponent},
   {path:'volunteerism', component:VolunteerismComponent},
   {path:'works', component:WorkComponent},
-  {path:'journey', component:JourneyComponent},
+  {path:'journey', component:JourneyDetailsComponent},
   {path:'positivity', component:PositivityComponent},
   {path:'stories', component:UntoldStoryComponent},
   {path:'admin', component:LoginComponent},

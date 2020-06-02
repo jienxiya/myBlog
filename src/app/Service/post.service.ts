@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
-import { journey, PostsJourney } from "../Service/service";
+import { journey, PostsJourney} from "../Service/service";
 import { firestore } from 'firebase';
 
 @Injectable({
@@ -30,5 +30,19 @@ export class PostService {
       journey.id = res.size
       return this.postCollection.add(journey)
     })
+  }
+
+  getJourney(){
+    return this.posts
+  }
+
+  updateJourney(journey:journey){
+    this.postCollection.ref.where('id', '==', journey.id).get()
+      .then(res=>{
+        res.forEach(doc => {
+          this.postDoc = this.db.doc<journey>('posts/' + doc.id)
+          this.postDoc.update(journey)
+        });
+      })
   }
 }

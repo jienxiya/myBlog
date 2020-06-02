@@ -1,17 +1,16 @@
-import { Component, OnInit, Output,EventEmitter } from '@angular/core';
+import { Component, OnInit, Output,EventEmitter  } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { AngularFireStorage } from "@angular/fire/storage";
 import { Observable } from "rxjs";
 import { finalize } from "rxjs/operators";
 import { PostService } from "../Service/post.service";
 
-
 @Component({
-  selector: 'app-post-form',
-  templateUrl: './post-form.component.html',
-  styleUrls: ['./post-form.component.scss']
+  selector: 'app-add-post-form',
+  templateUrl: './add-post-form.component.html',
+  styleUrls: ['./add-post-form.component.scss']
 })
-export class PostFormComponent implements OnInit {
+export class AddPostFormComponent implements OnInit {
   postForm:FormGroup
   image = "";
   file = "";
@@ -20,7 +19,7 @@ export class PostFormComponent implements OnInit {
   URL: any;
   uploadPercent: Observable<number>;
   @Output() post = new EventEmitter;
-  
+
   constructor(
     private fb:FormBuilder,
     private storage: AngularFireStorage,
@@ -28,17 +27,16 @@ export class PostFormComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-      this.postForm = this.fb.group({
-        images:[null, Validators.required],
-        description:["",Validators.required ],
-        posts:new FormControl([]),
-      })
+    this.postForm = this.fb.group({
+      images:[null, Validators.required],
+      description:["",Validators.required ],
+    })
   }
 
   onUploadOutput(event){
     const filename =  event.target.files[0].name
     this.file = event.target.files[0]
-    const filePath = "imageUploads/"+ filename
+    const filePath = "postsUploads/"+ filename
     const fileRef = this.storage.ref(filePath);
     this.task = fileRef.put(this.file);
     this.uploadPercent = this.task.percentageChanges();
@@ -65,10 +63,6 @@ export class PostFormComponent implements OnInit {
     console.log('value', value) 
     this.post.emit(value)
   }
-
-  
-
-
 
 
 }

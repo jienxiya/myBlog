@@ -4,9 +4,9 @@ export interface Service {
 
 export interface journey{
     id:number
-    image:Blob
+    images:Blob
     description:string
-    posts:PostsJourney
+    posts:PostsJourney[]
 }
 
 export interface PostsJourney{

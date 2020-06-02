@@ -32,6 +32,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule, AngularFireStorage } from '@angular/fire/storage';
 import { environment } from '../environments/environment';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { AddPostFormComponent } from './add-post-form/add-post-form.component';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { AngularFirestore } from '@angular/fire/firestore';
     MusicDetailsComponent,
     TravelDetailsComponent,
     VolunteerDetailsComponent,
-    WorkDetailsComponent
+    WorkDetailsComponent,
+    AddPostFormComponent
   ],
   imports: [
     BrowserModule,
