@@ -16,6 +16,15 @@ import { ArtComponent } from './content/myworld/art/art.component';
 import { WorkComponent } from './content/myworld/work/work.component';
 import { VolunteerismComponent } from './content/myworld/volunteerism/volunteerism.component';
 import { PostFormComponent } from './post-form/post-form.component';
+import { JourneyDetailsComponent } from './content/blog/journey-details/journey-details.component';
+import { PositivityDetailsComponent } from './content/blog/positivity-details/positivity-details.component';
+import { UStoryDetailsComponent } from './content/blog/u-story-details/u-story-details.component';
+import { ArtDetailsComponent } from './content/myworld/art-details/art-details.component';
+import { MusicDetailsComponent } from './content/myworld/music-details/music-details.component';
+import { TravelDetailsComponent } from './content/myworld/travel-details/travel-details.component';
+import { VolunteerDetailsComponent } from './content/myworld/volunteer-details/volunteer-details.component';
+import { WorkDetailsComponent } from './content/myworld/work-details/work-details.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -32,11 +41,20 @@ import { PostFormComponent } from './post-form/post-form.component';
     ArtComponent,
     WorkComponent,
     VolunteerismComponent,
-    PostFormComponent
+    PostFormComponent,
+    JourneyDetailsComponent,
+    PositivityDetailsComponent,
+    UStoryDetailsComponent,
+    ArtDetailsComponent,
+    MusicDetailsComponent,
+    TravelDetailsComponent,
+    VolunteerDetailsComponent,
+    WorkDetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     MDBBootstrapModule.forRoot()
 
   ],
