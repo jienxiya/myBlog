@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter  } from '@angular/core';
+import { Volunteer } from "../../../Service/service";
+import { PostService } from "../../../Service/post.service";
+import { Subscription } from "rxjs";
 
 @Component({
   selector: 'app-volunteerism',
@@ -6,10 +9,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./volunteerism.component.scss']
 })
 export class VolunteerismComponent implements OnInit {
+  getStorySubscription:Subscription;
+  events:Volunteer[];
+  event:Volunteer
+  showPost = true
+  @Output() value = new EventEmitter
+  @Output() data = new EventEmitter
 
-  constructor() { }
+  constructor(private service:PostService) { }
 
   ngOnInit(): void {
+    this.getStorySubscription = this.service.getVolunteerism().subscribe(res=>{
+      this.events = res
+      console.log("getting post", this.events);
+
+    })
+  }
+
+  upload(volunteer:Volunteer){
+    this.service.addVolunteerism(volunteer)
+    console.log(volunteer);  
+  }
+
+  showPosts(data:any){
+    this.showPost = false
+    this.value.emit(data) 
   }
 
 }

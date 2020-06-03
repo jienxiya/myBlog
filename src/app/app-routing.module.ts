@@ -2,15 +2,15 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from "./login/login.component";
 import { HomepageComponent } from "./homepage/homepage.component";
-import { TravelComponent } from "./content/myworld/travel/travel.component"
+import { TravelDetailsComponent } from "./content/myworld/travel-details/travel-details.component"
 import { AboutComponent } from "./content/about/about.component";
-import { ArtComponent } from "./content/myworld/art/art.component"
-import { MusicComponent } from "./content/myworld/music/music.component"
-import { VolunteerismComponent } from "./content/myworld/volunteerism/volunteerism.component"
-import { WorkComponent } from "./content/myworld/work/work.component"
+import { ArtDetailsComponent } from "./content/myworld/art-details/art-details.component"
+import { MusicDetailsComponent } from "./content/myworld/music-details/music-details.component"
+import { VolunteerDetailsComponent } from "./content/myworld/volunteer-details/volunteer-details.component"
+import { WorkDetailsComponent } from "./content/myworld/work-details/work-details.component"
 import { JourneyDetailsComponent } from "./content/blog/journey-details/journey-details.component"
-import { PositivityComponent } from "./content/blog/positivity/positivity.component"
-import { UntoldStoryComponent } from "./content/blog/untold-story/untold-story.component"
+import { PositivityDetailsComponent } from "./content/blog/positivity-details/positivity-details.component"
+import { UStoryDetailsComponent } from "./content/blog/u-story-details/u-story-details.component"
 
 
 
@@ -20,14 +20,14 @@ import { UntoldStoryComponent } from "./content/blog/untold-story/untold-story.c
 const routes: Routes = [
   {path:'', component:HomepageComponent},
   {path:'about', component:AboutComponent},
-  {path:'travel', component:TravelComponent},
-  {path:'arts', component:ArtComponent},
-  {path:'musics', component:MusicComponent},
-  {path:'volunteerism', component:VolunteerismComponent},
-  {path:'works', component:WorkComponent},
+  {path:'travel', component:TravelDetailsComponent},
+  {path:'arts', component:ArtDetailsComponent},
+  {path:'musics', component:MusicDetailsComponent},
+  {path:'volunteerism', component:VolunteerDetailsComponent},
+  {path:'works', component:WorkDetailsComponent},
   {path:'journey', component:JourneyDetailsComponent},
-  {path:'positivity', component:PositivityComponent},
-  {path:'stories', component:UntoldStoryComponent},
+  {path:'positivity', component:PositivityDetailsComponent},
+  {path:'stories', component:UStoryDetailsComponent},
   {path:'admin', component:LoginComponent},
   {path:'**', redirectTo:''}
 ];
