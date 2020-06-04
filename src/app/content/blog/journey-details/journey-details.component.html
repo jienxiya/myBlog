@@ -2,54 +2,65 @@
     <app-journey (value)="getValue($event)"></app-journey>
 </div>
 <div *ngIf="!showPost">
-        <div class="view intro jarallax" style="background-attachment: fixed; background-size: cover; min-height: 500px" [ngStyle]="{'background-image': 'url(' + posts.images + ')'}">
-            <div class="full-bg-img mask rgba-pink-slight">
-                <div class="container">
-                    <div class="d-flex align-items-center d-flex justify-content-center" style="height: 500px">
-                        <div class="row mt-5">
-                            <div class="col-md-12 wow fadeIn mb-3">
-                                <div class="intro-info-content text-center">
-                                    <h2 class="h1 display-1 white-text mb-2 wow fadeInDown" data-wow-delay="0.3s">My Life <br> Journey
-                                    </h2>
-                                </div>
-                                <a mdbBtn color="pink" class="wow fadeIn waves-light" mdbWavesEffect data-wow-delay="0.4s" (click)="basicModal.show()">Add Post</a>
+    <div class="view intro jarallax" style="background-attachment: fixed; background-size: cover; min-height: 100vh" [ngStyle]="{'background-image': 'url(' + posts?.images + ')'}">
+        <div class="full-bg-img mask rgba-pink-slight">
+            <div class="container">
+                <div class="d-flex align-items-center d-flex justify-content-center" style="height: 100vh">
+                    <div class="row mt-5">
+                        <div class="col-md-12 wow fadeIn mb-3">
+                            <div class="intro-info-content text-center">
+                                <h2 class="h1 display-1 white-text mb-2 wow fadeInDown" data-wow-delay="0.3s">My Life <br> Journey
+                                </h2>
                             </div>
+                            <a mdbBtn color="pink" class="wow fadeIn waves-light" mdbWavesEffect data-wow-delay="0.4s" (click)="basicModal.show()">Add Post</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 </div>
 
 <div mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
               <span aria-hidden="true">×</span>
             </button>
-                    <h4 class="modal-title w-100" id="myModalLabel">Add Post</h4>
-                </div>
-                <div class="modal-body">
-                    <app-add-post-form (post)="upload($event)"></app-add-post-form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" mdbBtn class="waves-light btn btn-outline-danger" aria-label="Close" (click)="basicModal.hide()" mdbWavesEffect>Close</button>
-                </div>
+                <h4 class="modal-title w-100" id="myModalLabel">Add Post</h4>
             </div>
-        </div>
-</div>
-<div class="container" *ngFor="let post of postss">
-        <div class="row">
-            <div class="col-md-12 text-center my-5">
-                <div class="container">
-                    <figure class="figure">
-                        <img [src]="post.images" class="figure-img img-fluid z-depth-1" alt="..." style="width: 400px">
-                    </figure>
-                </div>
+            <div class="modal-body">
+                <app-add-post-form (post)="upload($event)"></app-add-post-form>
             </div>
-            <div class="col-md-12 text-center my-5">
-                <p align="justify">{{post.description}}</p>
+            <div class="modal-footer">
+                <button type="button" mdbBtn class="waves-light btn btn-outline-danger" aria-label="Close" (click)="basicModal.hide()" mdbWavesEffect>Close</button>
             </div>
         </div>
     </div>
+</div>
+<div class="container" *ngFor="let post of postss">
+    <div class="container">
+        <figure class="text-center fadeInBottomLeft">
+            <div class="container flex-center">
+                <div class="row mt-5 py-5">
+                    <div class="col-md-12 wow fadeIn mb-3" style="animation-name:fadeIn; visibility: visible;">
+                        <div class="text-center">
+                            <div class="row">
+                                <div class="col-6">
+                                    <img [src]="post?.images" class="figure-img img-fluid z-depth-1" alt="..." style="width: 700px">
+                                </div>
+                                <div class="col-6">
+                                    <figcaption class="figure-caption">
+                                        <h5>{{post?.description}}</h5>
+                                    </figcaption>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </figure>
+        <hr>
+    </div>
+</div>

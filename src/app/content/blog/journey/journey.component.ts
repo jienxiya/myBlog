@@ -10,12 +10,12 @@ import { Subscription } from "rxjs";
   styleUrls: ['./journey.component.scss']
 })
 export class JourneyComponent implements OnInit {
-  getPostSubscription:Subscription;
-  events:journey[];
-  event:journey
-  showPost = true
-  @Output() value = new EventEmitter
-  @Output() data = new EventEmitter
+    getPostSubscription:Subscription;
+    events:journey[];
+    event:journey
+    showPost = true
+    @Output() value = new EventEmitter
+    @Output() data = new EventEmitter
   constructor(private service:PostService) { }
 
   ngOnInit(): void {

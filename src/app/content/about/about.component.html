@@ -1,263 +1,120 @@
-<div class="view intro jarallax" style="background-image: url(https://www.aheadrm.com/wp-content/uploads/2018/04/package-allotment.jpg); background-attachment: fixed; height: 1200px;">
-    <div class="full-bg-img mask rgba-white-light">
-        <div class="container">
-            <div class="d-flex align-items-center d-flex justify-content-center" style="height: 1200px">
-                <div class="row mt-5">
-                    <div class="col-md-12 wow fadeIn mb-3">
-                        <div class="intro-info-content text-center">
-                            <h2 class="h1 display-1 mb-2 wow fadeInDown" data-wow-delay="0.3s" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">CEBUANA<br>
-                                <a class="indigo-text font-bold"></a>
-                            </h2>
-                            <h5 class="font-up mb-3 mt-1 font-bold wow fadeIn" data-wow-delay="0.4s">
-                            </h5><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-                            <!-- <a mdbBtn color="light-blue" size="lg" class="wow fadeIn waves-light" mdbWavesEffect data-wow-delay="0.4s"></a> -->
-                            <a mdbBtn floating="true" color="transparent" class="wow fadeIn waves-light" mdbWavesEffect data-wow-delay="0.4s">
-                                <mdb-icon fas icon="chevron-down" style="color:black" size="lg"></mdb-icon>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="container">
-    <!--Grid row-->
-    <div class="row">
-        <!--Grid column-->
-        <div class="col-md-12 text-center mb-5">
-            <h2 class="h1 font-bold light-blue-text my-5">Personal Background</h2>
-            <p align="justify">Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro, cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor
-                sit amet, consectetur quis elit. Perspiciatis commodi porro, cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur
-                quis elit. Perspiciatis commodi porro, cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit.
-                Perspiciatis commodi porro, cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis
-                commodi porro, cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro,
-                cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro, cumque provident
-                rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro, cumque provident rem corporis
-                odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.</p>
-        </div>
-        <!--Grid column-->
-    </div>
-    <!--Grid row-->
-</div>
-
-<div class="view intro jarallax" style="background-image: none; z-index: 0; min-height: 700px;">
-    <figure class="text-center fadeInBottomLeft">
-        <div class="container flex-center">
-            <div class="row mt-5 py-5">
-                <div class="col-md-12 wow fadeIn mb-3" style="animation-name:fadeIn; visibility: visible;">
-                    <div class="text-center">
-                        <div class="row">
-                            <div class="col-6">
-                                <img src="https://1.bp.blogspot.com/-elXCTzcvsnI/W1dDEBCx46I/AAAAAAAAKGc/UF6zIvcOO40l31580LL8cm8TA9EVpHPnACLcBGAs/s640/liza%2B1.PNG" class="figure-img img-fluid z-depth-1" alt="..." style="width: 400px">
-                            </div>
-                            <div class="col-6">
-                                <figcaption class="figure-caption">
-                                    <h1>HI</h1>
-                                    <p>I'am Russlle</p>
-                                    <a mdbBtn color="pink" class="wow fadeIn waves-light" mdbWavesEffect data-wow-delay="0.4s">Read
-                                            more</a>
-                                </figcaption>
+<a mdbBtn color="light-blue" size="lg" class="wow fadeIn waves-light" mdbWavesEffect data-wow-delay="0.4s" (click)="basicModal.show()" *ngIf="!isSubmit">Add About Page</a>
+<div *ngFor="let post of events">
+    <div class="view intro jarallax" style="background-attachment: fixed; background-size: cover; min-height: 100vh" [ngStyle]="{'background-image': 'url(' + post?.images + ')'}">
+        <div class="full-bg-img mask rgba-pink-slight">
+            <div class="container">
+                <div class="d-flex align-items-center d-flex justify-content-center" style="height: 100vh">
+                    <div class="row mt-5">
+                        <div class="col-md-12 wow fadeIn mb-3">
+                            <div class="intro-info-content text-center">
+                                <h2 class="h1 display-1 mb-2 wow fadeInDown" data-wow-delay="0.3s" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">{{post.title}}<br>
+                                    <a class="indigo-text font-bold"></a>
+                                </h2>
+                                <h5 class="font-up mb-3 mt-1 font-bold wow fadeIn" data-wow-delay="0.4s">
+                                </h5>
+                                <a mdbBtn color="light-green" size="lg" class="wow fadeIn waves-light" mdbWavesEffect data-wow-delay="0.4s" (click)="basicModal.show()" *ngIf="isSubmit">Add Details to My About Page</a>
+                                <br><br><br><br><br><br><br><br><br>
+                                <a mdbBtn floating="true" color="transparent" class="wow fadeIn waves-light" mdbWavesEffect data-wow-delay="0.4s">
+                                    <mdb-icon fas icon="chevron-down" style="color:black" size="lg"></mdb-icon>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-    </figure>
-    <!-- <div class="full-bg-img mask rgba-white-light">
-        <div class="container flex-center">
-            <div class="row mt-5 py-5">
-                <div class="col-md-12 wow fadeIn mb-3" style="animation-name: none; visibility: visible;">
-                    <div class="text-center">
-                        <figure class="figure">
-                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/8-col/img%20(73).jpg" class="figure-img img-fluid z-depth-1" alt="..." style="width: 400px">
-                            <figcaption class="figure-caption">A caption for the above image.</figcaption>
-                        </figure>
+    </div>
+    <!-- <div class="jarallax" data-speed="-0.2">
+        <img class="jarallax-img" [src]="post.images" style="background-attachment: fixed; height: 100vh;">
+        <div class="full-bg-img mask rgba-white-light">
+            <div class="container">
+                <div class="d-flex align-items-center d-flex justify-content-center" style="height: 100vh">
+                    <div class="row mt-5">
+                        <div class="col-md-12 wow fadeIn mb-3">
+                            <div class="intro-info-content text-center">
+                                <h2 class="h1 display-1 mb-2 wow fadeInDown" data-wow-delay="0.3s" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">{{post.title}}<br>
+                                    <a class="indigo-text font-bold"></a>
+                                </h2>
+                                <h5 class="font-up mb-3 mt-1 font-bold wow fadeIn" data-wow-delay="0.4s">
+                                </h5>
+                                <a mdbBtn color="light-blue" size="lg" class="wow fadeIn waves-light" mdbWavesEffect data-wow-delay="0.4s" (click)="basicModal.show()" *ngIf="!isSubmit">Add About Page</a>
+                                <a mdbBtn color="light-green" size="lg" class="wow fadeIn waves-light" mdbWavesEffect data-wow-delay="0.4s" (click)="basicModal.show()" *ngIf="isSubmit">Add Details to My About Page</a>
+                                <br><br><br><br><br><br><br><br><br>
+                                <a mdbBtn floating="true" color="transparent" class="wow fadeIn waves-light" mdbWavesEffect data-wow-delay="0.4s">
+                                    <mdb-icon fas icon="chevron-down" style="color:black" size="lg"></mdb-icon>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div> -->
 </div>
-
-
-<div class="view intro jarallax" style="background-image: url(https://www.telegraph.co.uk/content/dam/Travel/2018/April/road-trip-GettyImages-843421914.jpg?imwidth=450); background-attachment: fixed; background-size: cover; min-height: 700px">
-    <div class="full-bg-img mask rgba-pink-slight">
-        <div class="container">
-            <div class="d-flex align-items-center d-flex justify-content-center" style="height: 700px">
-                <div class="row mt-5">
-                    <div class="col-md-12 wow fadeIn mb-3">
-                        <div class="intro-info-content text-center">
-                            <h2 class="h1 display-1 white-text mb-2 wow fadeInDown" data-wow-delay="0.3s">Traveller
-                            </h2>
-                        </div>
-                    </div>
-                </div>
+<div mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
+          <span aria-hidden="true">×</span>
+        </button>
+                <h4 class="modal-title w-100" id="myModalLabel">Add Post</h4>
+            </div>
+            <div class="modal-body">
+                <app-about-form (post)="upload($event)" *ngIf="!isSubmit"></app-about-form>
+                <app-description-form (post)="addDetails($event)" *ngIf="isSubmit"></app-description-form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" mdbBtn class="waves-light btn btn-outline-danger" aria-label="Close" (click)="basicModal.hide()" mdbWavesEffect>Close</button>
             </div>
         </div>
     </div>
 </div>
-<div class="container">
+
+<div class="container" *ngFor="let post of events">
     <!--Grid row-->
     <div class="row">
         <!--Grid column-->
-        <div class="col-md-12 text-center my-5">
-            <h2 class="h1 font-bold grey-text mb-5">Lorem ipsum dolor sit amet, consectetur quis elit.</h2>
-            <p align="justify">Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro, cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor
-                sit amet, consectetur quis elit. Perspiciatis commodi porro, cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur
-                quis elit. Perspiciatis commodi porro, cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit.
-                Perspiciatis commodi porro, cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis
-                commodi porro, cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro,
-                cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro, cumque provident
-                rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro, cumque provident rem corporis
-                odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.</p>
+        <div class="col-md-12 text-center mb-5">
+            <h2 class="h1 font-bold light-blue-text my-5">Personal Background</h2>
+            <p align="justify">{{post.description}}</p>
         </div>
         <!--Grid column-->
     </div>
     <!--Grid row-->
 </div>
 
-<div class="view intro jarallax" style="background-image: url(https://aestheticmag.files.wordpress.com/2019/06/royalty-free-music.jpg); background-attachment: fixed; background-size: cover; min-height: 700px">
-    <div class="full-bg-img mask rgba-pink-slight">
-        <div class="container">
-            <div class="d-flex align-items-center d-flex justify-content-center" style="height: 700px">
-                <div class="row mt-5">
-                    <div class="col-md-12 wow fadeIn mb-3">
-                        <div class="intro-info-content text-center">
-                            <h2 class="h1 display-1 white-text mb-2 wow fadeInDown" data-wow-delay="0.3s">Musician
-                            </h2>
+<div *ngFor="let post of postss">
+    <div class="view intro jarallax" style="background-image: url(https://mdbootstrap.com/img/Photos/Others/food2.jpg); background-attachment: fixed; background-size: cover; min-height: 700px">
+        <div class="full-bg-img mask rgba-pink-slight">
+        </div>
+    </div>
+    <div class="jarallax" style="background-attachment: fixed; min-height: 700px">
+        <img class="jarallax-img" [src]="post.images">
+        <div class="full-bg-img mask rgba-purple-slight">
+            <div class="container">
+                <div class="d-flex align-items-center d-flex justify-content-center" style="height: 700px">
+                    <div class="row mt-5">
+                        <div class="col-md-12 wow fadeIn mb-3">
+                            <div class="intro-info-content text-center">
+                                <h2 class="h1 display-1 white-text mb-2 wow fadeInDown" data-wow-delay="0.3s">{{post.title}}
+                                </h2>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-
-<div class="container">
-    <!--Grid row-->
-    <div class="row">
-        <!--Grid column-->
-        <div class="col-md-12 text-center my-5">
-            <h2 class="h1 font-bold grey-text mb-5">Lorem ipsum dolor sit amet, consectetur quis elit.</h2>
-            <p align="justify">Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro, cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor
-                sit amet, consectetur quis elit. Perspiciatis commodi porro, cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur
-                quis elit. Perspiciatis commodi porro, cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit.
-                Perspiciatis commodi porro, cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis
-                commodi porro, cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro,
-                cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro, cumque provident
-                rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro, cumque provident rem corporis
-                odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.</p>
-        </div>
-        <!--Grid column-->
-    </div>
-    <!--Grid row-->
-</div>
-<div class="view intro jarallax" style="background-image: url(https://images.glaciermedia.ca/polopoly_fs/1.23428521.1536767787!/fileImage/httpImage/image.jpg_gen/derivatives/landscape_804/art-stock-photo-painting.jpg); background-attachment: fixed; background-size: cover; min-height: 700px">
-    <div class="full-bg-img mask rgba-pink-slight">
-        <div class="container">
-            <div class="d-flex align-items-center d-flex justify-content-center" style="height: 700px">
-                <div class="row mt-5">
-                    <div class="col-md-12 wow fadeIn mb-3">
-                        <div class="intro-info-content text-center">
-                            <h2 class="h1 display-1 white-text mb-2 wow fadeInDown" data-wow-delay="0.3s">Artist
-                            </h2>
-                        </div>
-                    </div>
-                </div>
+    <div class="container">
+        <!--Grid row-->
+        <div class="row">
+            <!--Grid column-->
+            <div class="col-md-12 text-center my-5">
+                <p align="justify">{{post.description}}</p>
             </div>
+            <!--Grid column-->
         </div>
+        <!--Grid row-->
     </div>
-</div>
-<div class="container">
-    <!--Grid row-->
-    <div class="row">
-        <!--Grid column-->
-        <div class="col-md-12 text-center my-5">
-            <h2 class="h1 font-bold grey-text mb-5">Lorem ipsum dolor sit amet, consectetur quis elit.</h2>
-            <p align="justify">Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro, cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor
-                sit amet, consectetur quis elit. Perspiciatis commodi porro, cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur
-                quis elit. Perspiciatis commodi porro, cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit.
-                Perspiciatis commodi porro, cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis
-                commodi porro, cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro,
-                cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro, cumque provident
-                rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro, cumque provident rem corporis
-                odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.</p>
-        </div>
-        <!--Grid column-->
-    </div>
-    <!--Grid row-->
-</div>
-<div class="view intro jarallax" style="background-image: url(https://lh3.googleusercontent.com/proxy/4QJKod-zreqUlj9LMqMixYAzJGYDSWYDd8Uo13BHrrkN-em9cRIW6SpDilAP0gKushvMW3Zoj9HPx3nrtsYBtY1BhCf2iFUpW6Gk7STnPN5Wltti3ZxQskz-u8EIoTfVuBbxYxVKX1-f8Hb1FXmcn9llQw); background-attachment: fixed; background-size: cover; min-height: 700px">
-    <div class="full-bg-img mask rgba-pink-slight">
-        <div class="container">
-            <div class="d-flex align-items-center d-flex justify-content-center" style="height: 700px">
-                <div class="row mt-5">
-                    <div class="col-md-12 wow fadeIn mb-3">
-                        <div class="intro-info-content text-center">
-                            <h2 class="h1 display-1 white-text mb-2 wow fadeInDown" data-wow-delay="0.3s">Worker
-                            </h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="container">
-    <!--Grid row-->
-    <div class="row">
-        <!--Grid column-->
-        <div class="col-md-12 text-center my-5">
-            <h2 class="h1 font-bold grey-text mb-5">Lorem ipsum dolor sit amet, consectetur quis elit.</h2>
-            <p align="justify">Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro, cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor
-                sit amet, consectetur quis elit. Perspiciatis commodi porro, cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur
-                quis elit. Perspiciatis commodi porro, cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit.
-                Perspiciatis commodi porro, cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis
-                commodi porro, cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro,
-                cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro, cumque provident
-                rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro, cumque provident rem corporis
-                odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.</p>
-        </div>
-        <!--Grid column-->
-    </div>
-    <!--Grid row-->
-</div>
-<div class="view intro jarallax" style="background-image: url(https://cardiffstudentmedia.co.uk/gairrhydd/wp-content/uploads/sites/2/2015/03/volunteers.jpg); background-attachment: fixed; background-size: cover; min-height: 700px">
-    <div class="full-bg-img mask rgba-pink-slight">
-        <div class="container">
-            <div class="d-flex align-items-center d-flex justify-content-center" style="height: 700px">
-                <div class="row mt-5">
-                    <div class="col-md-12 wow fadeIn mb-3">
-                        <div class="intro-info-content text-center">
-                            <h2 class="h1 display-1 white-text mb-2 wow fadeInDown" data-wow-delay="0.3s">Volunteerism
-                            </h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="container">
-    <!--Grid row-->
-    <div class="row">
-        <!--Grid column-->
-        <div class="col-md-12 text-center my-5">
-            <h2 class="h1 font-bold grey-text mb-5">Lorem ipsum dolor sit amet, consectetur quis elit.</h2>
-            <p align="justify">Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro, cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor
-                sit amet, consectetur quis elit. Perspiciatis commodi porro, cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur
-                quis elit. Perspiciatis commodi porro, cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit.
-                Perspiciatis commodi porro, cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis
-                commodi porro, cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro,
-                cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro, cumque provident
-                rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro, cumque provident rem corporis
-                odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.</p>
-        </div>
-        <!--Grid column-->
-    </div>
-    <!--Grid row-->
 </div>

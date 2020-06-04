@@ -3,13 +3,14 @@
     <div class="md-form mb-5">
         <i class="fas fa-image prefix grey-text"></i>
         <input type="file" id="orangeForm-email" formControlName="images" (change)="onUploadOutput($event)" class="form-control validate">
-
     </div>
-
+    <div class="md-form mb-5">
+        <i class="fas fa-image prefix grey-text"></i>
+        <input type="text" id="orangeForm-email" formControlName="title" class="form-control validate" placeholder="Title of Description">
+    </div>
     <div class="md-form mb-4">
         <i class="fas fa-file prefix grey-text"></i>
-        <textarea type="text" id="form8" class="md-textarea form-control" rows="4" formControlName="description"></textarea>
-        <label data-error="wrong" data-success="right" for="form8">Description...</label>
+        <textarea type="text" id="form8" class="md-textarea form-control" rows="4" formControlName="description" placeholder=""></textarea>
     </div>
-    <button class="btn btn-success">Upload  </button>
+    <button class="btn btn-success">Upload</button>
 </form>

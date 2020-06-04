@@ -1,8 +1,8 @@
-<form [formGroup]="postForm"(ngSubmit)="upload(postForm.value)">
-        <img [src]="downloadURL | async" class="img" alt="image"/>
+<form [formGroup]="postForm" (ngSubmit)="upload(postForm.value)">
+    <img [src]="downloadURL | async" class="img" alt="image" style="width: 400px; height: 300px;" />
     <div class="md-form mb-5">
         <i class="fas fa-image prefix grey-text"></i>
-        <input type="file" id="orangeForm-email" formControlName="images"  (change)="onUploadOutput($event)" class="form-control validate">
+        <input type="file" id="orangeForm-email" formControlName="images" (change)="onUploadOutput($event)" class="form-control validate">
 
     </div>
 

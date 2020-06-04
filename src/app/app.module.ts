@@ -33,6 +33,8 @@ import { AngularFireStorageModule, AngularFireStorage } from '@angular/fire/stor
 import { environment } from '../environments/environment';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AddPostFormComponent } from './add-post-form/add-post-form.component';
+import { DescriptionFormComponent } from './form/description-form/description-form.component';
+import { AboutFormComponent } from './form/about-form/about-form.component';
 
 
 @NgModule({
@@ -58,7 +60,9 @@ import { AddPostFormComponent } from './add-post-form/add-post-form.component';
     TravelDetailsComponent,
     VolunteerDetailsComponent,
     WorkDetailsComponent,
-    AddPostFormComponent
+    AddPostFormComponent,
+    DescriptionFormComponent,
+    AboutFormComponent
   ],
   imports: [
     BrowserModule,

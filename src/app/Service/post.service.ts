@@ -11,7 +11,9 @@ import {
   Music,
   Travel,
   Volunteer,
-  Work 
+  Work,
+  Service,
+  About 
 } from "../Service/service";
 import { firestore } from 'firebase';
 
@@ -61,6 +63,16 @@ export class PostService {
   works:Observable<Work[]>
   private workDoc:AngularFirestoreDocument<Work>
   private workCollection: AngularFirestoreCollection<Work>
+
+  service:Service
+  services:Observable<Service[]>
+  private serviceDoc:AngularFirestoreDocument<Service>
+  private serviceCollection: AngularFirestoreCollection<Service>
+
+  about:About
+  abouts:Observable<About[]>
+  private aboutDoc:AngularFirestoreDocument<About>
+  private aboutCollection: AngularFirestoreCollection<About>
 
 // ===============
 
@@ -138,6 +150,24 @@ export class PostService {
           return {id, ...data}
         }))
       )
+
+      this.serviceCollection = db.collection<Service>('profile', ref=>ref.orderBy('id', 'asc'));
+      this.services = this.serviceCollection.snapshotChanges().pipe(
+        map(action=>action.map(a=>{
+          const data = a.payload.doc.data() as Service
+          const id = a.payload.doc.id
+          return {id, ...data}
+        }))
+      )
+
+      this.aboutCollection = db.collection<About>('about', ref=>ref.orderBy('id', 'asc'));
+      this.abouts = this.aboutCollection.snapshotChanges().pipe(
+        map(action=>action.map(a=>{
+          const data = a.payload.doc.data() as About
+          const id = a.payload.doc.id
+          return {id, ...data}
+        }))
+      )
   }
   // =====================================================
 
@@ -199,6 +229,20 @@ export class PostService {
     })
   }
 
+  addProfile(service:Service){
+    this.serviceCollection.ref.get().then(res=>{
+      service.id = res.size
+      return this.serviceCollection.add(service)
+    })
+  }
+
+  addAbout(about:About){
+    this.aboutCollection.ref.get().then(res=>{
+      about.id = res.size
+      return this.aboutCollection.add(about)
+    })
+  }
+
 // ==================================================
 
 // Getting data from firebase
@@ -226,6 +270,14 @@ export class PostService {
   }
   getWorks(){
     return this.works
+  }
+
+  getProfile(){
+    return this.services
+  }
+
+  getMyAbouts(){
+    return this.abouts
   }
  
 // =========================================================
@@ -266,7 +318,7 @@ export class PostService {
     this.artsCollection.ref.where('id', '==', art.id).get()
       .then(res=>{
         res.forEach(doc => {
-          this.artsDoc = this.db.doc<journey>('arts/' + doc.id)
+          this.artsDoc = this.db.doc<Arts>('arts/' + doc.id)
           this.artsDoc.update(art)
         });
       })
@@ -309,6 +361,26 @@ export class PostService {
         res.forEach(doc => {
           this.workDoc = this.db.doc<Work>('works/' + doc.id)
           this.workDoc.update(work)
+        });
+      })
+  }
+
+  updateProfile(service:Service){
+    this.serviceCollection.ref.where('id', '==', service.id).get()
+      .then(res=>{
+        res.forEach(doc => {
+          this.serviceDoc = this.db.doc<Service>('profile/' + doc.id)
+          this.serviceDoc.update(service)
+        });
+      })
+  }
+
+  updateAbout(about:About){
+    this.aboutCollection.ref.where('id', '==', about.id).get()
+      .then(res=>{
+        res.forEach(doc => {
+          this.aboutDoc = this.db.doc<About>('about/' + doc.id)
+          this.aboutDoc.update(about)
         });
       })
   }
