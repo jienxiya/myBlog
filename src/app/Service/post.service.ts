@@ -13,7 +13,8 @@ import {
   Volunteer,
   Work,
   Service,
-  About 
+  About, 
+
 } from "../Service/service";
 import { firestore } from 'firebase';
 
@@ -386,6 +387,22 @@ export class PostService {
   }
   
   
+  // =====================================================================
+
+  // Editing data
+
+  // ========================================================================
+
+  // Deleting Data
+  deleteJourneyData(journey:journey){
+    this.postCollection.ref.where('id', '==', journey.id).get()
+      .then(res=>{
+        res.forEach(doc=>{
+          this.postDoc = this.db.doc<journey>('posts/' + doc.id)
+          this.postDoc.delete()
+        })
+      })
+  }
   // =====================================================================
 }
 

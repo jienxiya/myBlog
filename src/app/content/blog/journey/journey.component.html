@@ -43,7 +43,15 @@
             <div class="container">
                 <figure class="figure">
                     <img [src]="post.images" class="figure-img img-fluid z-depth-1" alt="..." style="width: 500px; height: 300px;">
-                    <figcaption class="figure-caption text-right" (click)="showPosts(post)">View Post</figcaption>
+                    <!-- <div style="text-align:center">
+                        <figcaption class="figure-caption text-right" (click)="showPosts(post)">View Post</figcaption>
+                        <figcaption class="figure-caption text-right">Delete Post</figcaption>
+                    </div> -->
+                    <figcaption class="btn-group" role="group">
+                        <button class="btn btn-link">Edit Post</button>
+                        <button class="btn btn-link">Delete Post</button>
+                        <button class="btn btn-link" (click)="showPosts(post)">View Post</button>
+                    </figcaption>
                 </figure>
             </div>
         </div>

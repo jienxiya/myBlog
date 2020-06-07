@@ -37,5 +37,16 @@ export class MusicDetailsComponent implements OnInit {
     //   }
     // })
   }
+  delete(data:PostsMusic){
+    const index = this.posts.posts.indexOf(data)
+    console.log(index);
+    if(confirm("are you sure you want to Delete this Post")){
+      this.posts.posts.splice(index)
+      this.service.updateJourney(this.posts)
+    }else{
+      alert("Delete is cancelled")
+    }
+    
+  }
 
 }
