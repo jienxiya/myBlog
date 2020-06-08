@@ -36,4 +36,18 @@ export class ArtComponent implements OnInit {
     this.value.emit(data) 
   }
 
+  delete(data:Arts){
+    console.log(data);
+    if(confirm("Are you sure you want delete this post? This post will not Be recovered")){
+      this.service.deleteJourneyData(data)
+    }else{
+      prompt("Delete is Cancelled")
+    }  
+}
+
+edit(data:Arts){
+  console.log(data);
+  
+}
+
 }

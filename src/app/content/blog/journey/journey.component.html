@@ -48,8 +48,8 @@
                         <figcaption class="figure-caption text-right">Delete Post</figcaption>
                     </div> -->
                     <figcaption class="btn-group" role="group">
-                        <button class="btn btn-link">Edit Post</button>
-                        <button class="btn btn-link">Delete Post</button>
+                        <button class="btn btn-link" (click)="edit(post)">Edit Post</button>
+                        <button class="btn btn-link" (click)="delete(post)">Delete Post</button>
                         <button class="btn btn-link" (click)="showPosts(post)">View Post</button>
                     </figcaption>
                 </figure>
@@ -60,5 +60,6 @@
         </div>
         <!--Grid column-->
     </div>
+    <hr>
     <!--Grid row-->
 </div>

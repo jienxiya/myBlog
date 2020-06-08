@@ -4,6 +4,8 @@ import { PostService } from "../../../Service/post.service";
 import { Subscription } from "rxjs";
 
 
+
+
 @Component({
   selector: 'app-journey',
   templateUrl: './journey.component.html',
@@ -38,12 +40,18 @@ export class JourneyComponent implements OnInit {
     
   }
 
-  // getValue(data:number){
-  //   this.events.map(res=>{
-  //     if(res.id === data){
-  //       this.event = res
-  //     }
-  //   })
-  // }
+  delete(data:journey){
+      console.log(data);
+      if(confirm("Are you sure you want delete this post? This post will not Be recovered")){
+        this.service.deleteJourneyData(data)
+      }else{
+        prompt("Delete is Cancelled")
+      }  
+  }
+
+  edit(data:journey){
+    console.log(data);
+    
+  }
 
 }

@@ -26,12 +26,13 @@
     "angular-bootstrap-md": "^9.3.1",
     "animate.css": "^4.1.0",
     "chart.js": "^2.5.0",
+    "firebase": ">= 5.5.7 <8",
     "hammerjs": "^2.0.8",
     "jarallax": "^1.12.1",
     "rxjs": "~6.5.4",
+    "sweetalert": "^2.1.2",
     "tslib": "^1.10.0",
-    "zone.js": "~0.10.2",
-    "firebase": ">= 5.5.7 <8"
+    "zone.js": "~0.10.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.900.7",

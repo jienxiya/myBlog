@@ -35,5 +35,18 @@ export class TravelComponent implements OnInit {
     this.showPost = false
     this.value.emit(data) 
   }
+  delete(data:Travel){
+    console.log(data);
+    if(confirm("Are you sure you want delete this post? This post will not Be recovered")){
+      this.service.deleteJourneyData(data)
+    }else{
+      prompt("Delete is Cancelled")
+    }  
+}
+
+edit(data:Travel){
+  console.log(data);
+  
+}
 
 }
