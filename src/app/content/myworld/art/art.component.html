@@ -46,7 +46,7 @@
                     <img [src]="post?.images" class="figure-img img-fluid z-depth-1" alt="..." style="width: 500px; height: 300px;">
                     <figcaption class="figure-caption text-right" (click)="showPosts(post)">View Post</figcaption>
                     <figcaption class="btn-group" role="group">
-                        <button class="btn btn-link" (click)="edit(post)">Edit Post</button>
+                        <button class="btn btn-link" [routerLink]="['/edit', post.id,'arts']" routerLinkActive="router-link-active">Edit Post</button>
                         <button class="btn btn-link" (click)="delete(post)">Delete Post</button>
                         <button class="btn btn-link" (click)="showPosts(post)">View Post</button>
                     </figcaption>

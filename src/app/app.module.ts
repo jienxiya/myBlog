@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule }   from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -35,6 +36,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { AddPostFormComponent } from './add-post-form/add-post-form.component';
 import { DescriptionFormComponent } from './form/description-form/description-form.component';
 import { AboutFormComponent } from './form/about-form/about-form.component';
+import { EditFormComponent } from './form/edit-form/edit-form.component';
 
 
 @NgModule({
@@ -62,12 +64,14 @@ import { AboutFormComponent } from './form/about-form/about-form.component';
     WorkDetailsComponent,
     AddPostFormComponent,
     DescriptionFormComponent,
-    AboutFormComponent
+    AboutFormComponent,
+    EditFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    FormsModule,
     MDBBootstrapModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features

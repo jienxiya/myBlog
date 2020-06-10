@@ -39,9 +39,9 @@ export class WorkComponent implements OnInit {
   delete(data:Work){
     console.log(data);
     if(confirm("Are you sure you want delete this post? This post will not Be recovered")){
-      this.service.deleteJourneyData(data)
+      this.service.deleteWorkData(data)
     }else{
-      prompt("Delete is Cancelled")
+      alert("Delete is Cancelled")
     }  
 }
 

@@ -18,8 +18,10 @@ export class PostFormComponent implements OnInit {
   task: any;
   downloadURL: Observable<string>;
   URL: any;
+
   uploadPercent: Observable<number>;
   @Output() post = new EventEmitter;
+  isShow = false
   
   constructor(
     private fb:FormBuilder,
@@ -36,13 +38,14 @@ export class PostFormComponent implements OnInit {
   }
 
   onUploadOutput(event){
+    this.isShow = true
     const filename =  event.target.files[0].name
     this.file = event.target.files[0]
     const filePath = "imageUploads/"+ filename
     const fileRef = this.storage.ref(filePath);
     this.task = fileRef.put(this.file);
     this.uploadPercent = this.task.percentageChanges();
-    // this.downloadURL = fileRef.getDownloadURL()
+    console.log(this.uploadPercent)    // this.downloadURL = fileRef.getDownloadURL()
     // console.log(this.downloadURL);
     
     this.task
@@ -51,6 +54,7 @@ export class PostFormComponent implements OnInit {
         finalize(() => {
           this.downloadURL = fileRef.getDownloadURL()
           fileRef.getDownloadURL().subscribe(res=>{
+            this.isShow = false
             this.URL = res
             this.postForm.value.images = this.URL
             

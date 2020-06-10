@@ -49,8 +49,8 @@ export class JourneyComponent implements OnInit {
       }  
   }
 
-  edit(data:journey){
-    console.log(data);
+  update(data:number){
+    alert(data)
     
   }
 

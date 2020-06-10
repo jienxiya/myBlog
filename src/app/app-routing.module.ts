@@ -11,6 +11,7 @@ import { WorkDetailsComponent } from "./content/myworld/work-details/work-detail
 import { JourneyDetailsComponent } from "./content/blog/journey-details/journey-details.component"
 import { PositivityDetailsComponent } from "./content/blog/positivity-details/positivity-details.component"
 import { UStoryDetailsComponent } from "./content/blog/u-story-details/u-story-details.component"
+import { EditFormComponent } from "./form/edit-form/edit-form.component";
 
 
 
@@ -29,6 +30,7 @@ const routes: Routes = [
   {path:'positivity', component:PositivityDetailsComponent},
   {path:'stories', component:UStoryDetailsComponent},
   {path:'admin', component:LoginComponent},
+  {path:'edit/:id/:path', component:EditFormComponent},
   {path:'**', redirectTo:''}
 ];
 

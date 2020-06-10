@@ -48,7 +48,7 @@
                         <figcaption class="figure-caption text-right">Delete Post</figcaption>
                     </div> -->
                     <figcaption class="btn-group" role="group">
-                        <button class="btn btn-link" (click)="edit(post)">Edit Post</button>
+                        <button class="btn btn-link" [routerLink]="['/edit', post.id,'journey']" routerLinkActive="router-link-active">Edit Post</button>
                         <button class="btn btn-link" (click)="delete(post)">Delete Post</button>
                         <button class="btn btn-link" (click)="showPosts(post)">View Post</button>
                     </figcaption>

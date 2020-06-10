@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
+import { RouterLink, Router, ActivatedRoute } from "@angular/router";
 import { 
   journey,
   PostsJourney, 
@@ -79,7 +80,7 @@ export class PostService {
 
 // Connecting to Firebase
 
-  constructor(public db: AngularFirestore) { 
+  constructor(public db: AngularFirestore, private route:ActivatedRoute) { 
       this.postCollection = db.collection<journey>('posts', ref=>ref.orderBy('id', 'asc'));
       this.posts = this.postCollection.snapshotChanges().pipe(
         map(action=>action.map(a=>{
@@ -283,6 +284,104 @@ export class PostService {
  
 // =========================================================
 
+  getDataById(id, path:string){
+    if(path == 'journey'){
+      const data =  this.db.collection('posts').doc(id).valueChanges()
+      console.log(id);
+      return data
+      
+    }
+  }
+
+  updateData(id:any,data, path){
+    // const path = this.route.snapshot.params['path']
+    if(path == 'journey'){
+      this.postCollection.ref.where('id','==', data.id).get()
+        .then(res=>{
+          res.forEach(doc=>{
+            this.postDoc = this.db.doc<journey>('posts/' + doc.id)
+            this.postDoc.set(data)
+            console.log("return data",data);
+          })
+        })
+    }
+    if(path == 'positivity'){
+      this.positiveCollection.ref.where('id','==', data.id).get()
+        .then(res=>{
+          res.forEach(doc=>{
+            this.positiveDoc = this.db.doc<Positivity>('positivities/' + doc.id)
+            this.positiveDoc.set(data)
+            console.log("return data",data);
+          })
+        })
+    }
+    if(path == 'stories'){
+      this.storyCollection.ref.where('id','==', data.id).get()
+        .then(res=>{
+          res.forEach(doc=>{
+            this.storyDoc = this.db.doc<UStory>('stories/' + doc.id)
+            this.storyDoc.set(data)
+            console.log("return data",data);
+          })
+        })
+    }
+    if(path == 'arts'){
+      this.artsCollection.ref.where('id', '==', data.id).get()
+      .then(res=>{
+        res.forEach(doc=>{
+          this.artsDoc = this.db.doc<Arts>('arts/' + doc.id)
+          this.artsDoc.set(data)
+          console.log("delete data",data);
+          
+        })
+      })
+    }
+    if(path == 'musics'){
+      this.musicCollection.ref.where('id', '==', data.id).get()
+      .then(res=>{
+        res.forEach(doc=>{
+          this.musicDoc = this.db.doc<Music>('music/' + doc.id)
+          this.musicDoc.set(data)
+          console.log("delete data",data);
+          
+        })
+      })
+    }
+    if(path == 'travel'){
+      this.travelCollection.ref.where('id', '==', data.id).get()
+      .then(res=>{
+        res.forEach(doc=>{
+          this.travelDoc = this.db.doc<Travel>('travel/' + doc.id)
+          this.travelDoc.set(data)
+          console.log("delete data",data);
+          
+        })
+      })
+    }
+    if(path == 'works'){
+      this.workCollection.ref.where('id', '==', data.id).get()
+      .then(res=>{
+        res.forEach(doc=>{
+          this.workDoc = this.db.doc<Work>('works/' + doc.id)
+          this.workDoc.set(data)
+          console.log("delete data",data);
+          
+        })
+      })
+    }
+    if(path == 'volunteerism'){
+      this.volunteerCollection.ref.where('id', '==', data.id).get()
+      .then(res=>{
+        res.forEach(doc=>{
+          this.volunteerDoc = this.db.doc<Volunteer>('volunteerism/' + doc.id)
+          this.volunteerDoc.set(data)
+          console.log("delete data",data);
+          
+        })
+      })
+    }
+  }
+
 // Updating data from firebase
 
   updateJourney(journey:journey){
@@ -400,6 +499,90 @@ export class PostService {
         res.forEach(doc=>{
           this.postDoc = this.db.doc<journey>('posts/' + doc.id)
           this.postDoc.delete()
+        })
+      })
+  }
+
+  deletePositivityData(data:Positivity){
+    this.positiveCollection.ref.where('id', '==', data.id).get()
+      .then(res=>{
+        res.forEach(doc=>{
+          this.positiveDoc = this.db.doc<Positivity>('positivities/' + doc.id)
+          this.positiveDoc.delete()
+          console.log("delete data",data);
+          
+        })
+      })
+  }
+
+  deleteStoryData(data:UStory){
+    this.storyCollection.ref.where('id', '==', data.id).get()
+      .then(res=>{
+        res.forEach(doc=>{
+          this.storyDoc = this.db.doc<UStory>('stories/' + doc.id)
+          this.storyDoc.delete()
+          console.log("delete data",data);
+          
+        })
+      })
+  }
+
+  deleteArtsData(data:Arts){
+    this.artsCollection.ref.where('id', '==', data.id).get()
+      .then(res=>{
+        res.forEach(doc=>{
+          this.artsDoc = this.db.doc<Arts>('arts/' + doc.id)
+          this.artsDoc.delete()
+          console.log("delete data",data);
+          
+        })
+      })
+  }
+
+  deleteMusicData(data:Music){
+    this.musicCollection.ref.where('id', '==', data.id).get()
+      .then(res=>{
+        res.forEach(doc=>{
+          this.musicDoc = this.db.doc<Music>('music/' + doc.id)
+          this.musicDoc.delete()
+          console.log("delete data",data);
+          
+        })
+      })
+  }
+
+  deleteTravelData(data:Travel){
+    this.travelCollection.ref.where('id', '==', data.id).get()
+      .then(res=>{
+        res.forEach(doc=>{
+          this.travelDoc = this.db.doc<Travel>('travel/' + doc.id)
+          this.travelDoc.delete()
+          console.log("delete data",data);
+          
+        })
+      })
+  }
+
+  deleteWorkData(data:Work){
+    this.workCollection.ref.where('id', '==', data.id).get()
+      .then(res=>{
+        res.forEach(doc=>{
+          this.workDoc = this.db.doc<Work>('works/' + doc.id)
+          this.workDoc.delete()
+          console.log("delete data",data);
+          
+        })
+      })
+  }
+
+  deleteVolunteerData(data:Volunteer){
+    this.volunteerCollection.ref.where('id', '==', data.id).get()
+      .then(res=>{
+        res.forEach(doc=>{
+          this.volunteerDoc = this.db.doc<Volunteer>('volunteerism/' + doc.id)
+          this.volunteerDoc.delete()
+          console.log("delete data",data);
+          
         })
       })
   }

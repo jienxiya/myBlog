@@ -39,7 +39,7 @@ export class VolunteerismComponent implements OnInit {
   delete(data:Volunteer){
     console.log(data);
     if(confirm("Are you sure you want delete this post? This post will not Be recovered")){
-      this.service.deleteJourneyData(data)
+      this.service.deleteVolunteerData(data)
     }else{
       prompt("Delete is Cancelled")
     }  

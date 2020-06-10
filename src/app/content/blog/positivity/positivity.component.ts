@@ -38,11 +38,13 @@ export class PositivityComponent implements OnInit {
   }
 
   delete(data:Positivity){
-    console.log(data);
+    
     if(confirm("Are you sure you want delete this post? This post will not Be recovered")){
-      this.service.deleteJourneyData(data)
+      this.events.splice(data.id)
+      this.service.deletePositivityData(data)
+      console.log(data);
     }else{
-      prompt("Delete is Cancelled")
+      alert("Delete is Cancelled")
     }  
 }
 

@@ -1,0 +1,17 @@
+<div class="container">
+    <form [formGroup]="editForm" (ngSubmit)="upload(editForm.value)"><br>
+        <input type="number" hidden formControlName="id" name="id">
+        <img [src]="isEdit?URL:downloadURL | async" class="img" [alt]="uploadPercent" style="width: 400px; height: 300px;" />
+        <div class="md-form mb-5">
+            <i class="fas fa-image prefix grey-text"></i>
+            <input type="file" id="orangeForm-email" formControlName="images" (change)="onUploadOutput($event)" class="form-control validate">
+
+        </div>
+
+        <div class="md-form mb-4">
+            <i class="fas fa-file prefix grey-text"></i>
+            <textarea type="text" id="form8" class="md-textarea form-control" rows="4" formControlName="description" placeholder="Description"></textarea>
+        </div>
+        <button class="btn btn-success btn-block">Update</button><br>
+    </form>
+</div>
