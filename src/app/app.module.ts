@@ -37,6 +37,7 @@ import { AddPostFormComponent } from './add-post-form/add-post-form.component';
 import { DescriptionFormComponent } from './form/description-form/description-form.component';
 import { AboutFormComponent } from './form/about-form/about-form.component';
 import { EditFormComponent } from './form/edit-form/edit-form.component';
+import { EditPostFormComponent } from './form/edit-post-form/edit-post-form.component';
 
 
 @NgModule({
@@ -65,7 +66,8 @@ import { EditFormComponent } from './form/edit-form/edit-form.component';
     AddPostFormComponent,
     DescriptionFormComponent,
     AboutFormComponent,
-    EditFormComponent
+    EditFormComponent,
+    EditPostFormComponent
   ],
   imports: [
     BrowserModule,

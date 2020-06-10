@@ -1,7 +1,7 @@
 <form [formGroup]="postForm" (ngSubmit)="upload(postForm.value)">
     <!-- <span>{{uploadPercent | async}}</span> -->
     <div class="progress" *ngIf="isShow">
-        <div class="progress-bar" role="progressbar" [style.width.%]="uploadPercent | async" aria-valuemin="0" aria-valuemax="100"></div>
+        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" [style.width.%]="uploadPercent | async" aria-valuemin="0" aria-valuemax="100">{{uploadPercent | async}}</div>
     </div>
     <img [src]="downloadURL | async" class="rounded mx-auto d-block" style="width: 400px; height: 300px;" *ngIf="!isShow" alt="Your Picture will Display Here!" />
     <div class="md-form mb-5">
@@ -15,5 +15,5 @@
         <textarea type="text" id="form8" class="md-textarea form-control" rows="4" formControlName="description"></textarea>
         <label data-error="wrong" data-success="right" for="form8">Description...</label>
     </div>
-    <button class="btn btn-success">Upload  </button>
+    <button class="btn btn-success btn-block">Upload  </button>
 </form>

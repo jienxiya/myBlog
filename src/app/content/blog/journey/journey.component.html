@@ -47,11 +47,11 @@
                         <figcaption class="figure-caption text-right" (click)="showPosts(post)">View Post</figcaption>
                         <figcaption class="figure-caption text-right">Delete Post</figcaption>
                     </div> -->
-                    <figcaption class="btn-group" role="group">
-                        <button class="btn btn-link" [routerLink]="['/edit', post.id,'journey']" routerLinkActive="router-link-active">Edit Post</button>
-                        <button class="btn btn-link" (click)="delete(post)">Delete Post</button>
-                        <button class="btn btn-link" (click)="showPosts(post)">View Post</button>
-                    </figcaption>
+                    <div class="btn-group-vertical" role="group">
+                        <button mdbBtn color="light" mdbWavesEffect title="Edit" [routerLink]="['/edit', post.id,'journey']" routerLinkActive="router-link-active"><mdb-icon fas icon="edit" size="lg"></mdb-icon></button>
+                        <button mdbBtn color="light" mdbWavesEffect title="Delete" (click)="delete(post)"><mdb-icon fas icon="trash-alt" size="lg"></mdb-icon></button>
+                        <button mdbBtn color="light" mdbWavesEffect title="View" (click)="showPosts(post)"><mdb-icon fas icon="eye" size="lg"></mdb-icon></button>
+                    </div>
                 </figure>
             </div>
         </div>

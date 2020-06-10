@@ -24,7 +24,10 @@ export class EditFormComponent implements OnInit {
   datas:any
   path:string
   Uid:any
+  isShow = false
   uploadPercent: Observable<number>;
+  image2:any
+  description2:any
 
   constructor( private fb:FormBuilder, private route:ActivatedRoute, 
     private service:PostService, private storage: AngularFireStorage,
@@ -44,7 +47,10 @@ export class EditFormComponent implements OnInit {
               this.Uid = data.id
               this.image = data.images
               this.description = data.description
-                this.URL = data.images
+              this.URL = data.images
+              this.datas = data.posts
+              console.log(data.posts);
+              
               }
               this.createForm()
         })
@@ -132,7 +138,8 @@ export class EditFormComponent implements OnInit {
             this.Uid = data.id
             this.image = data.images
             this.description = data.description
-              this.URL = data.images
+            this.datas = data.posts
+            this.URL = data.images
           }
           this.createForm()
         })
@@ -144,6 +151,7 @@ export class EditFormComponent implements OnInit {
   upload(data:any){
     data.images = this.URL
     data.id = this.Uid
+    data.posts = this.datas
     this.service.updateData(this.Uid, data, this.path)
     if(this.path == 'journey'){
       this.router.navigate(['/journey'])
@@ -171,11 +179,12 @@ export class EditFormComponent implements OnInit {
       id:[this.Uid || null,Validators.required ],
       images:[null, Validators.required],
       description:[this.description || null,Validators.required ],
-      posts:new FormControl([]),
+      posts: new FormControl([])
     })
   }
 
   onUploadOutput(event){
+    this.isShow = true
     this.isEdit = false
     const filename =  event.target.files[0].name
     this.file = event.target.files[0]
@@ -192,6 +201,7 @@ export class EditFormComponent implements OnInit {
         finalize(() => {
           this.downloadURL = fileRef.getDownloadURL()
           fileRef.getDownloadURL().subscribe(res=>{
+            this.isShow = false
             this.URL = res
             this.editForm.value.images = this.URL
             

@@ -60,10 +60,10 @@
                     </div>
                 </div>
             </div>
-            <figcaption class="btn-group" role="group">
-                <button class="btn btn-link">Edit Post</button>
-                <button class="btn btn-link" (click)="delete(post)">Delete Post</button>
-            </figcaption>
+            <div class="btn-group-vertical" role="group">
+                <button mdbBtn color="light" mdbWavesEffect title="Edit" [routerLink]="['/edit', post.id,'stories']" routerLinkActive="router-link-active"><mdb-icon fas icon="edit" size="lg"></mdb-icon></button>
+                <button mdbBtn color="light" mdbWavesEffect title="Delete" (click)="delete(post)"><mdb-icon fas icon="trash-alt" size="lg"></mdb-icon></button>
+            </div>
         </figure>
         <hr>
     </div>

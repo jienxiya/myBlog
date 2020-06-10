@@ -1,5 +1,8 @@
 <form [formGroup]="postForm" (ngSubmit)="upload(postForm.value)">
-    <img [src]="downloadURL | async" class="img" alt="image" style="width: 400px; height: 300px;" />
+    <div class="progress" *ngIf="isShow">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" [style.width.%]="uploadPercent | async" aria-valuemin="0" aria-valuemax="100">{{uploadPercent | async}}</div>
+    </div>
+    <img [src]="downloadURL | async" class="rounded mx-auto d-block" style="width: 400px; height: 300px;" *ngIf="!isShow" alt="Your Picture will Display Here!" />
     <div class="md-form mb-5">
         <i class="fas fa-image prefix grey-text"></i>
         <input type="file" id="orangeForm-email" formControlName="images" (change)="onUploadOutput($event)" class="form-control validate">

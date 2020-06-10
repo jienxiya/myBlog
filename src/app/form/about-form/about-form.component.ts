@@ -18,6 +18,7 @@ export class AboutFormComponent implements OnInit {
   downloadURL: Observable<string>;
   URL: any;
   uploadPercent: Observable<number>;
+  isShow = false
   @Output() post = new EventEmitter;
   
   constructor(
@@ -36,6 +37,7 @@ export class AboutFormComponent implements OnInit {
   }
 
   onUploadOutput(event){
+    this.isShow = true
     const filename =  event.target.files[0].name
     this.file = event.target.files[0]
     const filePath = "imageUploads/"+ filename
@@ -51,6 +53,7 @@ export class AboutFormComponent implements OnInit {
         finalize(() => {
           this.downloadURL = fileRef.getDownloadURL()
           fileRef.getDownloadURL().subscribe(res=>{
+            this.isShow = false
             this.URL = res
             this.postForm.value.images = this.URL
             

@@ -80,34 +80,42 @@ export interface AboutPosts{
 //Interface For Posts 
 
 export interface PostsJourney{
+    id:number,
     photo:Blob
     description:string
 }
 export interface PostsPositvity{
+    id:number,
     photo:Blob
     description:string
 }
 export interface PostsUStory{
+    id:number,
     photo:Blob
     description:string
 }
 export interface PostsArts{
+    id:number,
     photo:Blob
     description:string
 }
 export interface PostsMusic{
+    id:number,
     photo:Blob
     description:string
-}
+}   
 export interface PostsTravel{
+    id:number,
     photo:Blob
     description:string
 }
 export interface PostsVolunteer{
+    id:number,
     photo:Blob
     description:string
 }
 export interface PostsWork{
+    id:number,
     photo:Blob
     description:string
 }
