@@ -28,6 +28,7 @@ export class MusicDetailsComponent implements OnInit {
 
   upload(music:PostsMusic){
     console.log("the postas",this.posts);
+    music.id = this.posts.posts.length
     this.posts.posts.push(music)
     this.service.updateMusic(this.posts)
     // this.post.map(res=>{

@@ -1,1 +1,22 @@
-<p>edit-post-form works!</p>
+<div class="container">
+    <form [formGroup]="editForm" (ngSubmit)="upload(editForm.value)"><br>
+        <div class="progress" *ngIf="isShow">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" [style.width.%]="uploadPercent | async" aria-valuemin="0" aria-valuemax="100">{{uploadPercent | async}}</div>
+        </div>
+        <div formGroupName="posts">
+            <input type="number" hidden formControlName="id" name="id">
+            <img [src]="isEdit?postURL:downloadURL | async" class="rounded mx-auto d-block" style="width: 400px; height: 300px;" *ngIf="!isShow" alt="Your Picture will Display Here!" />
+            <div class="md-form mb-5">
+                <i class="fas fa-image prefix grey-text"></i>
+                <input type="file" id="orangeForm-email" formControlName="images" (change)="onUploadOutput($event)" class="form-control validate">
+
+            </div>
+
+            <div class="md-form mb-4">
+                <i class="fas fa-file prefix grey-text"></i>
+                <textarea type="text" id="form8" class="md-textarea form-control" rows="4" formControlName="description" placeholder="Description"></textarea>
+            </div>
+        </div>
+        <button class="btn btn-success btn-block">Update</button><br>
+    </form>
+</div>

@@ -28,6 +28,7 @@ export class WorkDetailsComponent implements OnInit {
 
   upload(work:PostsWork){
     console.log("the postas",this.posts);
+    work.id = this.posts.posts.length
     this.posts.posts.push(work)
     this.service.updateWork(this.posts)
     // this.post.map(res=>{

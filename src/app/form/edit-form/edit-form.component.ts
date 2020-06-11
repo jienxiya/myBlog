@@ -65,6 +65,7 @@ export class EditFormComponent implements OnInit {
             this.image = data.images
             this.description = data.description
               this.URL = data.images
+              this.datas = data.posts
           }
           this.createForm()
         })
@@ -77,6 +78,7 @@ export class EditFormComponent implements OnInit {
             this.image = data.images
             this.description = data.description
               this.URL = data.images
+              this.datas = data.posts
           }
           this.createForm()
         })
@@ -89,6 +91,7 @@ export class EditFormComponent implements OnInit {
             this.image = data.images
             this.description = data.description
               this.URL = data.images
+              this.datas = data.posts
           }
           this.createForm()
         })
@@ -102,6 +105,7 @@ export class EditFormComponent implements OnInit {
             this.image = data.images
             this.description = data.description
               this.URL = data.images
+              this.datas = data.posts
           }
           this.createForm()
         })
@@ -114,6 +118,7 @@ export class EditFormComponent implements OnInit {
             this.image = data.images
             this.description = data.description
               this.URL = data.images
+              this.datas = data.posts
           }
           this.createForm()
         })
@@ -126,6 +131,7 @@ export class EditFormComponent implements OnInit {
             this.image = data.images
             this.description = data.description
               this.URL = data.images
+              this.datas = data.posts
           }
           this.createForm()
         })
@@ -152,7 +158,7 @@ export class EditFormComponent implements OnInit {
     data.images = this.URL
     data.id = this.Uid
     data.posts = this.datas
-    this.service.updateData(this.Uid, data, this.path)
+    this.service.updateData(data, this.path)
     if(this.path == 'journey'){
       this.router.navigate(['/journey'])
     }else if(this.path == 'positivity'){

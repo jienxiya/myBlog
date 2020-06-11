@@ -28,6 +28,7 @@ export class TravelDetailsComponent implements OnInit {
 
   upload(travel:PostsTravel){
     console.log("the postas",this.posts);
+    travel.id = this.posts.posts.length
     this.posts.posts.push(travel)
     this.service.updateTravel(this.posts)
     // this.post.map(res=>{

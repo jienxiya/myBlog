@@ -28,6 +28,7 @@ export class PositivityDetailsComponent implements OnInit {
 
   upload(positivity:PostsPositvity){
     console.log("the postas",this.posts);
+    positivity.id = this.posts.posts.length
     this.posts.posts.push(positivity)
     this.service.updatePositivity(this.posts)
     // this.post.map(res=>{

@@ -248,7 +248,7 @@ export class PostService {
 // ==================================================
 
 // Getting data from firebase
-
+  
   getJourney(){
     return this.posts
   }
@@ -292,8 +292,25 @@ export class PostService {
       
     }
   }
+  updateDetails(data,path){
+    this.postCollection.ref.where('id', '==', data.id).get()
+      .then(res=>{
+        res.forEach(doc=>{
+          // this.postDoc = this.db.doc<journey>('posts/' + doc.id)
+          this.postCollection.ref.where('id', '==', data.posts.id).get()
+            .then(res=>{
+              console.log(data.posts.id);
+              res.forEach(doc=>{
+                this.postDoc = this.db.doc<journey>('posts/' + doc.id)
+                this.postDoc.set(data)
+                
+              })
+            })
+        })
+      })
+  }
 
-  updateData(id:any,data, path){
+  updateData(data, path){
     // const path = this.route.snapshot.params['path']
     if(path == 'journey'){
       this.postCollection.ref.where('id','==', data.id).get()
@@ -390,6 +407,8 @@ export class PostService {
         res.forEach(doc => {
           this.postDoc = this.db.doc<journey>('posts/' + doc.id)
           this.postDoc.update(journey)
+          console.log("return:",journey);
+          
         });
       })
   }

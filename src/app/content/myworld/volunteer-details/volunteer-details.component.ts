@@ -28,6 +28,7 @@ export class VolunteerDetailsComponent implements OnInit {
 
   upload(volunteer:PostsVolunteer){
     console.log("the postas",this.posts);
+    volunteer.id = this.posts.posts.length
     this.posts.posts.push(volunteer)
     this.service.updateVolunteerism(this.posts)
     // this.post.map(res=>{

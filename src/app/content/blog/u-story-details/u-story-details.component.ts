@@ -29,6 +29,7 @@ export class UStoryDetailsComponent implements OnInit {
 
   upload(story:PostsUStory){
     console.log("the postas",this.posts);
+    story.id = this.posts.posts.length
     this.posts.posts.push(story)
     this.service.updateStory(this.posts)
     // this.post.map(res=>{

@@ -28,6 +28,7 @@ export class ArtDetailsComponent implements OnInit {
 
   upload(art:PostsArts){
     console.log("the postas",this.posts);
+    art.id = this.posts.posts.length
     this.posts.posts.push(art)
     this.service.updateArt(this.posts)
     // this.post.map(res=>{
