@@ -1,7 +1,9 @@
 <div style="text-align:center">
     <h2>WELCOME TO YOUR BLOG</h2>
     <h5>To Continue please login with your google account</h5>
-    <a mdbBtn style="background-color:rgb(0, 102, 255)" size="lg" class="wow fadeIn waves-light" mdbWavesEffect data-wow-delay="0.4s">
+    <a mdbBtn style="background-color:rgb(0, 102, 255)" size="lg" class="wow fadeIn waves-light" mdbWavesEffect data-wow-delay="0.4s" (click)="auth.googleSignin()">
         <mdb-icon fab icon="google" style="color:white" size="lg"></mdb-icon>&nbsp;&nbsp;&nbsp;
         <span>Sign in with Google</span></a>
+
+    <button class="btn btn-outline-danger" (click)="auth.signOut()">SignOut</button>
 </div>
