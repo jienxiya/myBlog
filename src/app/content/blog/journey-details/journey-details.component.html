@@ -9,7 +9,7 @@
                     <div class="row mt-5">
                         <div class="col-md-12 wow fadeIn mb-3">
                             <div class="intro-info-content text-center">
-                                <h2 class="h1 display-1 white-text mb-2 wow fadeInDown" data-wow-delay="0.3s">My Life <br> Journey
+                                <h2 class="h1 display-1 white-text mb-2 wow fadeInDown" data-wow-delay="0.3s">{{posts?.title}}
                                 </h2>
                             </div>
                             <a mdbBtn color="pink" class="wow fadeIn waves-light" mdbWavesEffect data-wow-delay="0.4s" (click)="basicModal.show()">Add Post</a>
@@ -39,8 +39,9 @@
         </div>
     </div>
 </div>
-<div class="container" *ngFor="let post of postss">
-    <div class="container">
+
+<div class="container">
+    <div class="container"  *ngFor="let post of postss">
         <figure class="text-center fadeInBottomLeft">
             <div class="container flex-center">
                 <div class="row mt-5 py-5">

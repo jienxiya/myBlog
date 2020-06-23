@@ -11,6 +11,7 @@ export class JourneyDetailsComponent implements OnInit {
   showPost = true
   post:journey[]
   posts:journey
+  title:any
   postss = []
   constructor(private service:PostService) { }
 
@@ -22,6 +23,10 @@ export class JourneyDetailsComponent implements OnInit {
     this.posts = data
     console.log("data", this.posts);
     this.postss = data.posts
+    // this.postss.forEach(element => {
+    //    console.log("el ", element);
+    // });
+    // this.title = data.posts.title
     console.log("posts", this.postss);
     
     this.showPost = false
