@@ -1,6 +1,8 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Service, PostsService } from "../Service/service";
 import { PostService } from "../Service/post.service";
+import { UsersService } from "../Service/users.service"
+import { AuthService } from "../Service/auth.service";
 import { Subscription } from "rxjs";
 import { journey, PostsJourney } from "../Service/service";
 import 'jarallax';
@@ -20,10 +22,13 @@ export class HomepageComponent implements OnInit,  AfterViewInit {
   postss = []
   showPost = true
   addQuotes = false
+  users:any;
   // @Output() value = new EventEmitter
   // @Output() data = new EventEmitter
 
-   constructor(private service:PostService) { }
+   constructor(private service:PostService, public user:UsersService, public auth:AuthService) { 
+    this.auth.user.subscribe(user=>this.users = user)
+  }
 
    ngOnInit(): void {
     this.getPostSubscription = this.service.getProfile().subscribe(res=>{

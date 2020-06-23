@@ -36,27 +36,31 @@
         </div>
     </div>
 </div>
-<div class="container" *ngFor="let post of events">
-    <!--Grid row-->
+<div class="container" style="text-align:center; margin-top:10px;margin-bottom:10px">
     <div class="row">
-        <!--Grid column-->
-        <div class="col-md-12 text-center my-5">
-            <div class="container">
-                <figure class="figure">
-                    <img [src]="post?.images" class="figure-img img-fluid z-depth-1" alt="..." style="width: 500px; height: 300px;">
-                    <figcaption class="figure-caption text-right" (click)="showPosts(post)">View Post</figcaption>
-                    <div class="btn-group-vertical" role="group">
-                        <button mdbBtn color="light" mdbWavesEffect title="Edit" [routerLink]="['/edit', post.id,'arts']" routerLinkActive="router-link-active"><mdb-icon fas icon="edit" size="lg"></mdb-icon></button>
-                        <button mdbBtn color="light" mdbWavesEffect title="Delete" (click)="delete(post)"><mdb-icon fas icon="trash-alt" size="lg"></mdb-icon></button>
-                        <button mdbBtn color="light" mdbWavesEffect title="View" (click)="showPosts(post)"><mdb-icon fas icon="eye" size="lg"></mdb-icon></button>
-                    </div>
-                </figure>
-            </div>
+        <div class="col-lg-4 col-md-3" *ngFor="let post of events">
+            <mdb-card>
+                <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+                    <figure>
+                        <mdb-card-img class="image" [src]="post.images" alt="Card image cap"></mdb-card-img>
+                    </figure>
+                    <a>
+                        <div class="mask"></div>
+                    </a>
+                </div>
+                <mdb-card-body>
+                    <h4 class="card-title">
+                        <strong>{{post.title}}</strong>
+                    </h4>
+                    <mdb-card-text id="description" maxlength="50">{{post.description}}</mdb-card-text>
+
+                    <a class="orange-text mt-1 d-flex flex-row-reverse">
+                        <h5 class="waves-effect p-2" mdbWavesEffect (click)="showPosts(post)">Read more
+                            <mdb-icon fas icon="chevron-right"></mdb-icon>
+                        </h5>
+                    </a>
+                </mdb-card-body>
+            </mdb-card>
         </div>
-        <div class="col-md-12 text-center my-5">
-            <p align="justify">{{post?.description}}</p>
-        </div>
-        <!--Grid column-->
-    </div>
-    <!--Grid row-->
+    </div><br><br>
 </div>

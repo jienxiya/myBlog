@@ -13,24 +13,28 @@ export interface PostsService{
 export interface journey{
     id:number
     images:Blob
+    title:String
     description:string
     posts:PostsJourney[]
 }
 export interface Positivity{
     id:number
     images:Blob
+    title:String
     description:string
     posts:PostsPositvity[]
 }
 export interface UStory{
     id:number
     images:Blob
+    title:String
     description:string
     posts:PostsUStory[]
 }
 export interface Arts{
     id:number
     images:Blob
+    title:String
     description:string
     posts:PostsArts[]
 
@@ -38,6 +42,7 @@ export interface Arts{
 export interface Music{
     id:number
     images:Blob
+    title:String
     description:string
     posts:PostsMusic[]
 
@@ -45,6 +50,7 @@ export interface Music{
 export interface Travel{
     id:number
     images:Blob
+    title:String
     description:string
     posts:PostsTravel[]
 
@@ -52,6 +58,7 @@ export interface Travel{
 export interface Volunteer{
     id:number
     images:Blob
+    title:String
     description:string
     posts:PostsVolunteer[]
 
@@ -59,6 +66,7 @@ export interface Volunteer{
 export interface Work{
     id:number
     images:Blob
+    title:String
     description:string
     posts:PostsWork[]
 }
