@@ -30,7 +30,7 @@ const routes: Routes = [
   {path:'journey', component:JourneyDetailsComponent},
   {path:'positivity', component:PositivityDetailsComponent},
   {path:'stories', component:UStoryDetailsComponent},
-  {path:'admin', component:LoginComponent},
+  {path:'admin/:path', component:LoginComponent},
   {path:'edit/:id/:path', component:EditFormComponent},
   {path:'edit-details/:id/:path', component:EditPostFormComponent},
   {path:'**', redirectTo:''}

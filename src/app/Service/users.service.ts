@@ -34,10 +34,10 @@ export class UsersService {
     return this.checkAuthorization(user, allowed)
   }
 
-  canDelete(user: User): boolean {
-    const allowed = ['admin']
-    return this.checkAuthorization(user, allowed)
-  }
+  // canDelete(user: User): boolean {
+  //   const allowed = ['admin']
+  //   return this.checkAuthorization(user, allowed)
+  // }
 
 
   private checkAuthorization(user: User, allowedRoles: string[]): boolean {

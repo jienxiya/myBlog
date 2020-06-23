@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Work, PostsWork } from "../../../Service/service";
 import { PostService } from "../../../Service/post.service";
+import { UsersService } from "../../../Service/users.service";
+import { AuthService } from "../../../Service/auth.service";
 
 @Component({
   selector: 'app-work-details',
@@ -12,8 +14,11 @@ export class WorkDetailsComponent implements OnInit {
   post:Work[]
   posts:Work
   postss = []
+  currentUser:any;
 
-  constructor(private service:PostService) { }
+  constructor(private service:PostService, public user:UsersService, public auth:AuthService) {
+    this.auth.user.subscribe(res => this.currentUser = res
+  )}
 
   ngOnInit() {
   }

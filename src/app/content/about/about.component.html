@@ -1,4 +1,4 @@
-<a mdbBtn color="light-blue" size="lg" class="wow fadeIn waves-light" mdbWavesEffect data-wow-delay="0.4s" (click)="basicModal.show()" *ngIf="!isSubmit">Add About Page</a>
+<a mdbBtn style="margin-top:100px" color="light-blue" size="lg" class="wow fadeIn waves-light" mdbWavesEffect data-wow-delay="0.4s" (click)="basicModal.show()" *ngIf="!isSubmit">Add About Page</a>
 <div *ngFor="let post of events">
     <div class="view intro jarallax" style="background-attachment: fixed; background-size: cover; min-height: 100vh" [ngStyle]="{'background-image': 'url(' + post?.images + ')'}">
         <div class="full-bg-img mask rgba-pink-slight">
@@ -12,7 +12,7 @@
                                 </h2>
                                 <h5 class="font-up mb-3 mt-1 font-bold wow fadeIn" data-wow-delay="0.4s">
                                 </h5>
-                                <a mdbBtn color="light-green" size="lg" class="wow fadeIn waves-light" mdbWavesEffect data-wow-delay="0.4s" (click)="basicModal.show()" *ngIf="isSubmit">Add Details to My About Page</a>
+                                <a mdbBtn color="light-green" size="lg" class="wow fadeIn waves-light" mdbWavesEffect data-wow-delay="0.4s" (click)="basicModal.show()" *ngIf="isSubmit">Add Details</a>
                                 <br><br><br><br><br><br><br><br><br>
                                 <a mdbBtn floating="true" color="transparent" class="wow fadeIn waves-light" mdbWavesEffect data-wow-delay="0.4s">
                                     <mdb-icon fas icon="chevron-down" style="color:black" size="lg"></mdb-icon>
