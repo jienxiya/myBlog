@@ -11,7 +11,7 @@
                             </h5>
                             <div *ngIf="user.canEdit(users)">
                                 <a mdbBtn color="light-green" size="lg" class="wow fadeIn waves-light" mdbWavesEffect data-wow-delay="0.4s" (click)="basicModal.show()" *ngIf="addQuotes">Add My Quotes</a>
-                                <a mdbBtn color="light-blue" size="lg" class="wow fadeIn waves-light" mdbWavesEffect data-wow-delay="0.4s" (click)="basicModal.show()" *ngIf="!addQuotes && user.canRead(users)">Add My Details</a>
+                                <a mdbBtn color="light-blue" size="lg" class="wow fadeIn waves-light" mdbWavesEffect data-wow-delay="0.4s" (click)="basicModal.show()" *ngIf="!addQuotes && user.canEdit(users)">Add My Details</a>
                                 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                                 <a mdbBtn floating="true" color="transparent" class="wow fadeIn waves-light" mdbWavesEffect data-wow-delay="0.4s">
                                     <mdb-icon fas icon="chevron-down" style="color:black" size="lg"></mdb-icon>

@@ -41,9 +41,9 @@
                     <a class="dropdown-item waves-light" mdbWavesEffect [routerLink]="['/volunteerism']" preserveQueryParams preserveFragment>Volunteerism</a>
                 </div>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link waves-light" mdbWavesEffect style="color:black">
-                    <mdb-icon fas icon="envelope"></mdb-icon> Contact<span class="sr-only">(current)</span></a>
+            <li class="nav-item" *ngIf="user.canEdit(users)">
+                <a class="nav-link waves-light" mdbWavesEffect style="color:black" (click)="auth.signOut()">
+                    <mdb-icon fas icon="sign-out-alt"></mdb-icon> Logout</a>
             </li>
             <!-- Dropdown -->
             <!-- <li class="nav-item dropdown" dropdown>

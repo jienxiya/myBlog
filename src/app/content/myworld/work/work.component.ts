@@ -2,6 +2,8 @@ import { Component, OnInit, Output, EventEmitter   } from '@angular/core';
 import { Work } from "../../../Service/service";
 import { PostService } from "../../../Service/post.service";
 import { Subscription } from "rxjs";
+import { UsersService } from "../../../Service/users.service";
+import { AuthService } from "../../../Service/auth.service";
 
 @Component({
   selector: 'app-work',
@@ -13,10 +15,12 @@ export class WorkComponent implements OnInit {
   events:Work[];
   event:Work
   showPost = true
+  users:any;
   @Output() value = new EventEmitter
   @Output() data = new EventEmitter
 
-  constructor(private service:PostService) { }
+  constructor(private service:PostService,public user: UsersService, private auth:AuthService) { 
+    this.auth.user.subscribe(user=>this.users = user) }
 
   ngOnInit(): void {
     this.getStorySubscription = this.service.getWorks().subscribe(res=>{

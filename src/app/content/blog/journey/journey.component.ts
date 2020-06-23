@@ -2,6 +2,8 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { PostsJourney, journey } from "../../../Service/service";
 import { PostService } from "../../../Service/post.service";
 import { Subscription } from "rxjs";
+import { UsersService } from "../../../Service/users.service";
+import { AuthService } from "../../../Service/auth.service";
 
 
 
@@ -16,9 +18,13 @@ export class JourneyComponent implements OnInit {
     events:journey[];
     event:journey
     showPost = true
+    users:any;
     @Output() value = new EventEmitter
     @Output() data = new EventEmitter
-  constructor(private service:PostService) { }
+    
+  constructor(private service:PostService, public user: UsersService, private auth:AuthService ) {
+    this.auth.user.subscribe(user=>this.users = user)
+   }
 
   ngOnInit(): void {
     this.getPostSubscription = this.service.getJourney().subscribe(res=>{
