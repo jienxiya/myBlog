@@ -2,6 +2,8 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Positivity } from "../../../Service/service";
 import { PostService } from "../../../Service/post.service";
 import { Subscription } from "rxjs";
+import { UsersService } from "../../../Service/users.service";
+import { AuthService } from "../../../Service/auth.service";
 
 @Component({
   selector: 'app-positivity',
@@ -13,11 +15,14 @@ export class PositivityComponent implements OnInit {
   events:Positivity[];
   event:Positivity
   showPost = true
+  users:any;
   @Output() value = new EventEmitter
   @Output() data = new EventEmitter
 
 
-  constructor(private service:PostService) { }
+  constructor(private service:PostService,public user: UsersService, private auth:AuthService) { 
+    this.auth.user.subscribe(user=>this.users = user)
+  }
 
   ngOnInit(): void {
     this.getPositiveSubscription = this.service.getPositivity().subscribe(res=>{

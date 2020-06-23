@@ -13,4 +13,14 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  GoogleSignIn(){
+      this.auth.googleSignin().then(res=>{
+        console.log(res);
+        
+      }).catch(e=>{
+        alert(e.message = "Network Error Please Refresh ANd Try Again")
+      })
+    }
+    
+
 }
